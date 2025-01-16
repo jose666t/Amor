@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Universo de [isa]</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #fff;
+            overflow-x: hidden;
+            text-align: center;
+            position: relative;
+        }
+        header {
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px;
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1rem;
+        }
+        .btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px; /* Hacemos el botón más pequeño */
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem; /* Tamaño de texto más pequeño */
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff4757;
+        }
+        .btn-sorpresa {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 5px 15px; /* Botón pequeño para la frase sorpresa */
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 30px;
+        }
+        .btn-sorpresa:hover {
+            background: #45a049;
+        }
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        #mensajeSorpresa {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>El Universo de [Su Nombre]</h1>
+        <p>Un lugar especial donde eres la protagonista</p>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <img src="img/2.jpg" alt="Foto Especial">
+            <h2>Estrella Favorita</h2>
+            <p>Eres la luz que ilumina mi vida.</p>
+        </div>
+        <div class="card">
+            <img src="img/3.jpg" alt="Planeta Amor">
+            <h2>Planeta Amor</h2>
+            <p>Aquí vive todo el amor que siento por ti.</p>
+        </div>
+        <div class="card">
+            <img src="img/4.jpg" alt="Constelación de Recuerdos">
+            <h2>Constelación de Recuerdos</h2>
+            <p>El momento que siempre estará en mi corazón es cuando te conocí.</p>
+        </div>
+    </div>
+
+    <!-- Botón pequeño para reproducir música en la esquina -->
+    <button class="btn" onclick="playMusic()">🎶 Música</button>
+
+    <!-- Botón para mostrar la frase sorpresa al final -->
+    <button class="btn-sorpresa" onclick="mostrarMensaje()">Mostrar Frase Sorpresa</button>
+
+    <!-- Frase sorpresa -->
+    <p id="mensajeSorpresa" style="display: none;"></p>
+
+    <footer>
+        <p>Eres mi universo, y siempre lo serás. &copy; 2025</p>
+    </footer>
+
+    <!-- Música de fondo -->
+    <audio id="musicaFondo" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+    </audio>
+
+    <script>
+        // Función para reproducir la música cuando el usuario hace clic
+        function playMusic() {
+            const audio = document.getElementById('musicaFondo');
+            audio.play(); // Reproduce la música
+            // Cambia el texto del botón para indicar que la música está sonando
+            document.querySelector('.btn').textContent = '¡Música en marcha! 🎶';
+        }
+
+        // Función para mostrar mensaje sorpresa
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensajeSorpresa');
+            mensaje.textContent = 'Te amo más que a las estrellas. Siempre serás mi universo.';
+            mensaje.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
